@@ -13,4 +13,4 @@ RUN set -eux; \
 	rm -rf kubectl.sha256; \
 	chmod +x kubectl; \
 	mv kubectl /usr/local/bin/kubectl; \
-	kubectl version
+	kubectl version --client=true

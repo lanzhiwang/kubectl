@@ -4,7 +4,7 @@ ENV KUBECTL_VERSION 1.25.4
 
 RUN set -eux; \
 	apt-get update; \
-	apt-get install -y --no-install-recommends curl; \
+	apt-get install -y --no-install-recommends ca-certificates curl; \
 	rm -rf /var/lib/apt/lists/*; \
 	dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; \
 	curl -LO "https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/${dpkgArch}/kubectl"; \
@@ -14,4 +14,3 @@ RUN set -eux; \
 	chmod +x kubectl; \
 	mv kubectl /usr/local/bin/kubectl; \
 	kubectl version
-

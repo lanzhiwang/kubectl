@@ -1,6 +1,6 @@
 FROM debian:bookworm-slim
 
-ENV KUBECTL_VERSION 1.25.4
+ENV KUBECTL_VERSION v1.25.4
 
 RUN set -eux; \
 	apt-get update; \
